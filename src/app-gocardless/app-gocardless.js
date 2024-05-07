@@ -196,10 +196,21 @@ app.post(
           break;
         case error instanceof GenericGoCardlessError:
           console.log('Something went wrong', inspect(error, { depth: null }));
-          sendErrorResponse({
-            error_type: 'SYNC_ERROR',
-            error_code: 'NORDIGEN_ERROR',
-          });
+
+          switch (error.status_code) {
+            case 503:
+              sendErrorResponse({
+                error_type: 'SYNC_ERROR',
+                error_code: 'INSTITUTION_CONNECTION_ERROR',
+              });
+              break;
+            default:
+              sendErrorResponse({
+                error_type: 'SYNC_ERROR',
+                error_code: 'NORDIGEN_ERROR',
+              });
+              break;
+          }
           break;
         case isAxiosError(error):
           console.log(
