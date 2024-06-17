@@ -20,6 +20,7 @@ import NbgEthngraaxxx from './banks/nbg_ethngraaxxx.js';
 import NorwegianXxNorwnok1 from './banks/norwegian-xx-norwnok1.js';
 import RevolutRevolt21 from './banks/revolut_revolt21.js';
 import SandboxfinanceSfin0000 from './banks/sandboxfinance-sfin0000.js';
+import SantanderGbAbbygb2L from './banks/santander-gb-abbygb2l.js';
 import SEBKortBankAB from './banks/seb-kort-bank-ab.js';
 import SEBPrivat from './banks/seb-privat.js';
 import SparNordSpNoDK22 from './banks/sparnord-spnodk22.js';
@@ -50,6 +51,7 @@ export const banks = [
   NorwegianXxNorwnok1,
   RevolutRevolt21,
   SandboxfinanceSfin0000,
+  SantanderGbAbbygb2L,
   SEBKortBankAB,
   SEBPrivat,
   SparNordSpNoDK22,
