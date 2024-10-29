@@ -111,6 +111,8 @@ app.post(
       response = getAccountResponse(results, accountId, new Date(startDate));
     }
 
+    results.hasError = true;
+
     if (results.hasError) {
       res.send({
         status: 'ok',
@@ -118,7 +120,13 @@ app.post(
           ? results.errors[accountId][0]
           : {
               ...response,
-              errors: results.errors,
+    //          errors: results.errors,
+                errors: {
+                'Demo Checking': [{
+                  error_type: 'ACCOUNT_NEEDS_ATTENTION',
+                  error_code: 'ACCOUNT_NEEDS_ATTENTION',
+                }]
+              }
             },
       });
       return;
